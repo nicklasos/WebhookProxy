@@ -27,10 +27,12 @@ function receive(string $url, string $developer): array
 
     $data = file_get_contents("$url?developer=$developer");
     foreach (explode("\n", rtrim($data)) as $json) {
-        $row = json_decode($json, true);
-        $row['body'] = base64_decode($row['body']);
+        if ($json) {
+            $row = json_decode($json, true);
+            $row['body'] = base64_decode($row['body']);
 
-        $result[] = $row;
+            $result[] = $row;
+        }
     }
 
     return $result;
