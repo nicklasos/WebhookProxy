@@ -12,19 +12,19 @@ function server(string $developer, string $url, string $body)
     file_put_contents("logs/$developer.log", $json . "\n", FILE_APPEND);
 }
 
-function client(string $developer, bool $clean): string
+function client(string $developer, bool $clear): string
 {
     $file = "logs/$developer.log";
     $data = file_get_contents($file);
     
-    if ($clean) {
+    if ($clear) {
         file_put_contents($file, '');
     }
 
     return $data;
 }
 
-function receive(string $url, string $developer): array
+function receive(string $url, string $developer, bool $clear): array
 {
     $result = [];
 

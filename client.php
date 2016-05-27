@@ -6,4 +6,4 @@ if (!$developer) {
     exit('Set developer parameter');
 }
 
-echo WebhookProxy\client($developer, isset($_GET['clean']));
+echo WebhookProxy\client($developer, isset($_GET['clear']));
