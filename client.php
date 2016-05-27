@@ -1,4 +1,9 @@
 <?php
 require 'WebhookProxy.php';
 
-echo WebhookProxy\client($_GET['developer']);
+$developer = $_GET['developer'] ?? null;
+if (!$developer) {
+    exit('Set developer parameter');
+}
+
+echo WebhookProxy\client($developer, isset($_GET['clean']));

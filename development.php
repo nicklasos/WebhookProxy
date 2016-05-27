@@ -1,10 +1,11 @@
 <?php
 require 'WebhookProxy.php';
 
-define('SERVER_URL', 'http://localhost:3003/client.php');
+define('SERVER_URL', 'https://dev-1.nibot.net/client.php');
 define('LOCAL_URL', 'http://localhost:3005/router.php');
+define('DEVELOPER', 'nicklasos');
 
-$data = WebhookProxy\receive(SERVER_URL, $_GET['developer']);
+$data = WebhookProxy\receive(SERVER_URL, $_GET['developer'] ?? DEVELOPER);
 
 foreach ($data as $item) {
     call($item);
