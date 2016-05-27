@@ -27,8 +27,13 @@ function client(string $developer, bool $clear): string
 function receive(string $url, string $developer, bool $clear): array
 {
     $result = [];
+    $url = "$url?developer=$developer";
+    
+    if ($clear) {
+        $url .= '&clear';
+    }
 
-    $data = file_get_contents("$url?developer=$developer");
+    $data = file_get_contents($url);
     foreach (explode("\n", rtrim($data)) as $json) {
         if ($json) {
             $row = json_decode($json, true);
