@@ -73,3 +73,10 @@ function url(string $url): string
 
     return $url;
 }
+
+function facebook(array $get)
+{
+    if (isset($get['hub.challenge'])) {
+        exit($get['hub.challenge']);
+    }
+}
