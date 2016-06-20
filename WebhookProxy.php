@@ -76,7 +76,7 @@ function url(string $url): string
 
 function facebook(array $get)
 {
-    if (isset($get['hub.challenge'])) {
-        exit($get['hub.challenge']);
+    if (isset($get['hub_challenge'])) {
+        exit($get['hub_challenge']);
     }
 }
