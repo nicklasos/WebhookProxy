@@ -1,3 +1,3 @@
 ### Webhook proxy
 
-Create bots simply :)
+Test webhooks simply :)
