@@ -1,7 +1,7 @@
 <?php
 require 'WebhookProxy.php';
 
-define('SERVER_URL', 'https://dev-1.nibot.net/client.php');
+define('SERVER_URL', 'https://server/client.php');
 define('LOCAL_URL', 'http://localhost:3000');
 define('DEVELOPER', 'nicklasos');
 
